@@ -7,7 +7,7 @@ class QuestionScreen extends StatefulWidget {
   const QuestionScreen({super.key, required this.onSelectAnswer,});
 
   final void Function(String answer) onSelectAnswer;
-
+ 
   @override
   State<QuestionScreen> createState() {
     return _QuestionScreenState();
@@ -17,7 +17,9 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String selectedAnswer) {
+    widget.onSelectAnswer(selectedAnswer);
+
     setState(() {
       currentQuestionIndex++;
     });
@@ -50,7 +52,9 @@ class _QuestionScreenState extends State<QuestionScreen> {
             ...currentQuestion.getShuffledList().map((answer) {
               return AnswerButton(
                 answerText: answer,
-                onTap: answerQuestion,
+                onTap: () {
+                  answerQuestion(answer);
+                },
               );
             }),
           ],
