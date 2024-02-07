@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:simple_quiz/questions_summary/summary_item.dart';
 
 class QuestionsSummary extends StatelessWidget {
@@ -12,11 +13,11 @@ class QuestionsSummary extends StatelessWidget {
       height: 400,
       child: SingleChildScrollView(
         child: Column(
-          children: 
-            summaryData.map((data) {
+          children: summaryData.map(
+            (data) {
               return SummaryItem(data);
             },
-            ).toList(),
+          ).toList(),
         ),
       ),
     );

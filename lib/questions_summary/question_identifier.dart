@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class QuestionIdentifier extends StatelessWidget {
   const QuestionIdentifier({
@@ -15,20 +14,20 @@ class QuestionIdentifier extends StatelessWidget {
   Widget build(BuildContext context) {
     final questionNumber = questionIndex + 1;
     return Container(
-      width: 20,
-      height: 20,
+      width: 30,
+      height: 30,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          color: isCorrectAnswer
-              ? const Color.fromARGB(255, 229, 249, 5)
-              : const Color.fromARGB(255, 212, 29, 16),
-              borderRadius: BorderRadius.circular(100)
-              ),
+        color: isCorrectAnswer
+            ? const Color.fromARGB(255, 150, 198, 241)
+            : const Color.fromARGB(255, 249, 133, 241),
+        borderRadius: BorderRadius.circular(100),
+      ),
       child: Text(
         questionNumber.toString(),
-        style: GoogleFonts.lato(
+        style: const TextStyle(
           fontWeight: FontWeight.bold,
-          color: const Color.fromARGB(255, 0, 0, 0),
+          color: Color.fromARGB(255, 22, 2, 56),
         ),
       ),
     );
